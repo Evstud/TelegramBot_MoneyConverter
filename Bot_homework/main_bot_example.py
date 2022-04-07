@@ -18,11 +18,11 @@ def help(message: telebot.types.Message):
 def values(message: telebot.types.Message):
     text = 'Доступные валюты:'
     for key in keys.keys():
-        text = '\n'.join((text, key, ))
+        text = '\n'.join((text, key))
     bot.reply_to(message, text)
 
 
-@bot.message_handler(content_types=['text', ])
+@bot.message_handler(content_types=['text'])
 def convert(message: telebot.types.Message):
     try:
         values = message.text.split(' ')
